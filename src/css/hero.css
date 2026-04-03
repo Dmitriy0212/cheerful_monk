@@ -1,0 +1,95 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 136px 0;
+  max-width: 375px;
+  margin: auto;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    url(../img/hero-section/hero-bg-mob.webp);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (min-resolution: 192dpi) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      url(../img/hero-section/hero-bg-mob@2x.webp);
+  }
+}
+.hero-container {
+  margin-left: 19px;
+  max-width: 375px;
+  max-height: 343px;
+}
+.hero-title {
+  max-width: 335px;
+  padding-bottom: 24px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+.hero-h2 {
+  max-width: 335px;
+  height: 145px;
+  margin-bottom: 32px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff;
+}
+.buttonRed {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 335px;
+  height: 46px;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+  display: inline-block;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 79px 0;
+    margin: auto;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      url(../img/hero-section/hero-bg-tab.webp);
+
+    max-width: 768px;
+  }
+  .hero-container {
+  }
+  .hero-title {
+  }
+  .hero-h2 {
+  }
+  .buttonRed {
+  }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      url(../img/hero-section/hero-bg-tab@2x.webp);
+  }
+}
