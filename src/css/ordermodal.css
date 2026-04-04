@@ -42,7 +42,7 @@
 
 .order-label:has(+ .order-input:required)::after {
   content: " *";
-  color: red;
+  color: black;
 }
 
 .order-input,
