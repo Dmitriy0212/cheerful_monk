@@ -126,7 +126,9 @@
   opacity: 0;
 }
 
-/* фон loader */
+.swiper-pagination > span {
+  background: #080c09;
+}
 .img-wrapper::before {
   content: '';
   position: absolute;
