@@ -8,7 +8,7 @@
   max-width: 375px;
   margin: auto;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+    linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
     url(../img/hero-section/hero-bg-mob.webp);
 
   background-size: cover;
@@ -18,7 +18,7 @@
 @media (min-resolution: 192dpi) {
   .hero {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
       url(../img/hero-section/hero-bg-mob@2x.webp);
   }
 }
@@ -72,24 +72,76 @@
     padding: 79px 0;
     margin: auto;
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
       url(../img/hero-section/hero-bg-tab.webp);
 
     max-width: 768px;
   }
   .hero-container {
+    margin-left: 31px;
+    max-width: 560px;
+    max-height: 237px;
   }
   .hero-title {
+    max-width: 560px;
+    padding-bottom: 24px;
   }
   .hero-h2 {
+    max-width: 560px;
+    height: 87px;
+    margin-bottom: 32px;
   }
   .buttonRed {
+    width: 209px;
+    height: 46px;
   }
 }
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
       url(../img/hero-section/hero-bg-tab@2x.webp);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .hero {
+    padding: 92px 0;
+    margin: auto;
+    background-image:
+      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(../img/hero-section/hero-bg-desk.webp);
+
+    max-width: 1440px;
+  }
+  .hero-container {
+    margin-left: 63px;
+    max-width: 560px;
+    max-height: 323px;
+  }
+  .hero-title {
+    max-width: 560px;
+    padding-bottom: 24px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: #fff;
+  }
+  .hero-h2 {
+    max-width: 560px;
+    height: 87px;
+    margin-bottom: 32px;
+  }
+  .buttonRed {
+    width: 209px;
+    height: 46px;
+  }
+}
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(../img/hero-section/hero-bg-desk@2x.webp);
   }
 }
