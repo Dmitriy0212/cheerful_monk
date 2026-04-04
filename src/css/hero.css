@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .hero-content {
   display: flex;
   flex-direction: column;
