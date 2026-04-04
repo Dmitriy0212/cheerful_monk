@@ -1,7 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { getPopularProducts, postCreateUsersOrder } from './baseUrl';
+import { getPopularProducts } from './baseUrl';
 
 export async function initSwiper() {
   const sliderWrapper = document.querySelector('.slider__wrapper');
