@@ -3,14 +3,13 @@ import axios from 'axios';
 
 export async function getFurnituresList(page, limit) {
   try {
-    const response = await axios.get(`${BASE_URL}furnitures`, {
-      params: {
-        limit: limit,
-        page: page,
-      },
-    });
+    const params = {limit: limit, page: page};
+    const response = await axios.get(`${BASE_URL}furnitures`, {params});
 
-    return response.data.furnitures;
+    return {
+      total: response.data.totalItems,
+      furnitures: response.data.furnitures,
+    };
   } catch (error) {
     console.error(
       'Помилка при запиті:',
