@@ -3,19 +3,27 @@
     --color-text: #1F2937;
 }
 
+/* MOBILE (від 375) */
+
+/* секція */
+.questions {
+    padding: 40px 16px;
+}
+
 /* заголовок */
-.questions-titel {
+.questions-title {
     font-weight: 700;
-    font-size: 48px;
+    font-size: 28px;
     line-height: 120%;
     letter-spacing: 0.01em;
     text-align: center;
-    color: var(--color-scheme-1-text);
+    margin-bottom: 30px;
+    color: var(--color-text);
 }
 
 /* контейнер */
 .questions-list {
-    width: 865px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -25,7 +33,7 @@
 /* елемент */
 .questions-item {
     border-bottom: 1px solid var(--color-border);
-    padding: 20px 0;
+    padding: 16px 0;
 }
 
 /* ховаємо radio */
@@ -33,11 +41,11 @@
     display: none;
 }
 
-/* заголовок */
+/* заголовок питання */
 .questions-item-title {
     font-weight: 600;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
     color: var(--color-text);
     cursor: pointer;
 
@@ -49,16 +57,16 @@
 /* стрілка */
 .questions-item-title::after {
     content: "▾";
-    font-size: 16px;
+    font-size: 14px;
     transition: transform 0.3s ease;
 }
 
-/* текст */
+/* текст відповіді */
 .questions-item-text {
     max-height: 0;
     overflow: hidden;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
     color: #6B7280;
 
     transition: max-height 0.3s ease, margin 0.3s ease;
@@ -78,4 +86,69 @@
 /* hover ефект */
 .questions-item-title:hover {
     color: #000;
+}
+
+/* TABLET (768px) */
+@media (min-width: 768px) {
+
+    /* секція */
+    .questions {
+        padding: 60px 32px;
+    }
+
+    /* заголовок */
+    .questions-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    /* контейнер */
+    .questions-list {
+        max-width: 700px;
+    }
+
+    /* елемент */
+    .questions-item {
+        padding: 20px 0;
+    }
+
+    /* заголовок питання */
+    .questions-item-title {
+        font-size: 18px;
+    }
+
+    /* текст відповіді */
+    .questions-item-text {
+        font-size: 15px;
+    }
+}
+
+/* DESKTOP (1440px) */
+@media (min-width: 1440px) {
+
+    /* секція */
+    .questions {
+        padding: 80px 0;
+    }
+
+    /* заголовок */
+    .questions-title {
+        font-size: 48px;
+        margin-bottom: 50px;
+    }
+
+    /* контейнер */
+    .questions-list {
+        max-width: 865px;
+    }
+
+    /* заголовок питання */
+    .questions-item-title {
+        font-size: 20px;
+    }
+
+    /* текст відповіді */
+    .questions-item-text {
+        font-size: 16px;
+    }
 }
