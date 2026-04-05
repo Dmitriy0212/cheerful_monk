@@ -6,7 +6,6 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => ({
   base: command === 'serve' ? '/' : '/cheerful_monk/',
-
   root: 'src',
 
   resolve: {

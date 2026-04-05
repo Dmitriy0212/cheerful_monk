@@ -3,11 +3,11 @@ import axios from 'axios';
 
 export async function getFurnituresList(page, limit, category = null) {
   try {
-    const params = {limit: limit, page: page};
+    const params = { limit: limit, page: page };
     if (category) {
       params.category = category;
     }
-    const response = await axios.get(`${BASE_URL}furnitures`, {params});
+    const response = await axios.get(`${BASE_URL}furnitures`, { params });
 
     return {
       total: response.data.totalItems,
