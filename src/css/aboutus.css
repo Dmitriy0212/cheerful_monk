@@ -13,13 +13,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+.about-content {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
 
 @media (min-width: 375px) {
-  .about-section {
-    width: 375px;
-    height: 887px;
-  }
-
   .about-title {
     font-family: 'Raleway', sans-serif;
     font-size: 36px;
@@ -46,14 +46,11 @@
 @media (min-width: 768px) {
   .about-section {
     padding: 32px;
-    width: 100%;
-    height: auto;
   }
 }
 
 @media (min-width: 1440px) {
   .about-section {
-    width: 100%;
     padding: 64px;
     display: flex;
     align-items: center;
