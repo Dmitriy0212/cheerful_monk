@@ -1,5 +1,4 @@
 const faqItems = document.querySelectorAll('.questions-item input');
-debugger;
 faqItems.forEach(input => {
   input.addEventListener('change', () => {
     if (input.checked) {
