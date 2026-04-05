@@ -162,11 +162,19 @@ export async function productmodalRender(id) {
   targetProductmodal.parentElement.addEventListener('click', e => {
     if (e.target === targetProductmodal.parentElement) {
       targetProductmodal.parentElement.classList.remove('visibility-modal');
+      document.body.style.overflow = '';
     }
   });
 
   targetProductmodal.children[0].addEventListener('click', e => {
     targetProductmodal.parentElement.classList.remove('visibility-modal');
+    document.body.style.overflow = '';
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      targetProductmodal.parentElement.classList.remove('visibility-modal');
+      document.body.style.overflow = '';
+    }
   });
   targetProductmodal.addEventListener('click', e => {
     e.stopPropagation();
