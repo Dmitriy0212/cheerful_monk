@@ -1,8 +1,7 @@
 .hero {
   padding: 136px 0;
-  background-image:
-    linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-    url(../img/hero-section/hero-bg-mob.webp);
+  background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+    url(/img/hero-section/hero-bg-mob.webp);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,9 +20,8 @@
 }
 @media (min-resolution: 192dpi) {
   .hero {
-    background-image:
-      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-      url(../img/hero-section/hero-bg-mob@2x.webp);
+    background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(/img/hero-section/hero-bg-mob@2x.webp);
   }
 }
 
@@ -51,9 +49,8 @@
 @media screen and (min-width: 768px) {
   .hero {
     padding: 80px 0;
-    background-image:
-      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-      url(../img/hero-section/hero-bg-tab.webp);
+    background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(/img/hero-section/hero-bg-tab.webp);
   }
   .hero-container {
     padding: 0 31.5px;
@@ -73,17 +70,15 @@
 }
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
-    background-image:
-      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-      url(../img/hero-section/hero-bg-tab@2x.webp);
+    background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(/img/hero-section/hero-bg-tab@2x.webp);
   }
 }
 
 @media screen and (min-width: 1440px) {
   .hero {
-    background-image:
-      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-      url(../img/hero-section/hero-bg-desk.webp);
+    background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(/img/hero-section/hero-bg-desk.webp);
   }
   .hero-container {
     padding: 0 64px;
@@ -107,8 +102,7 @@
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .hero {
     padding: 92px 0;
-    background-image:
-      linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
-      url(../img/hero-section/hero-bg-desk@2x.webp);
+    background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
+      url(/img/hero-section/hero-bg-desk@2x.webp);
   }
 }

@@ -50,7 +50,6 @@ export async function initSwiper() {
   const swiper = new Swiper('.slider', {
     pagination: {
       el: '.swiper-pagination',
-      dynamicBullets: true,
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 7,

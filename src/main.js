@@ -1,7 +1,5 @@
 import './css/modern-normalize.css';
 import './css/styles.css';
-import { initSwiper } from './js/popularproducts';
+import { init } from '/js/init.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initSwiper();
-});
+init();
