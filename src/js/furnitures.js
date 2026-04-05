@@ -1,5 +1,6 @@
 import refs from './refs.js';
 import { getFurnituresList } from './baseUrl.js';
+import { productmodalRender } from './productmodalrendering.js';
 
 const PER_PAGE = 8;
 let currentPage = 1;
@@ -46,6 +47,22 @@ async function loadFurnitures(page = 1, limit = PER_PAGE, category = null) {
   }
   return furnitureResponse;
 }
+
+refs.furnitureList.addEventListener('click', async e => {
+  const btn = e.target.closest('.furnitures-item__btn');
+  if (!btn) {
+    return;
+  }
+  const item = btn.closest('.furnitures-item');
+  if (!item) {
+    return;
+  }
+  const id = item.dataset.id;
+  if (!id) {
+    return;
+  }
+  await productmodalRender(id);
+});
 
 refs.loadMore.addEventListener('click', async () => {
   try {
