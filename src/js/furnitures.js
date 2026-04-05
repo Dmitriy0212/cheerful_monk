@@ -16,7 +16,7 @@ function renderFurniture(furniture) {
     <li class="furnitures-item" data-id="${furniture._id}">
       <img class="furnitures-item__img" src="${furniture.images[0] ?? ''}" alt="${furniture.name}">
       <h3 class="furnitures-item__title">${furniture.name}</h3>
-      <ul class="furnitures-item__color-list">${colorListLi}</ul>
+      <div class="furnitures-item__color-list" role="radiogroup" aria-label="Колір">${colorListLi}</div>
       <p class="furnitures-item__price">${furniture.price} грн</p>
       <button class="furnitures-item__btn buttonWhite">Детальніше</button>
     </li>
@@ -24,7 +24,16 @@ function renderFurniture(furniture) {
 }
 
 function renderColors(furniture) {
-  return furniture.color.map(color => `<li class="furnitures-item__color" style="background-color: ${color}"></li>`).join('');
+  const groupName = `furniture-color-${furniture._id}`;
+  return furniture.color
+    .map(
+      (color, i) => `
+    <label class="furnitures-item__color">
+      <input type="radio" class="furnitures-item__color-input" name="${groupName}" value="${color}"${i === 0 ? ' checked' : ''} />
+      <span class="furnitures-item__color-swatch" style="background-color: ${color}"></span>
+    </label>`
+    )
+    .join('');
 }
 
 async function loadFurnitures(page = 1, limit = PER_PAGE, category = null) {

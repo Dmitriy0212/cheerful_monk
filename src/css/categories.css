@@ -113,11 +113,38 @@
 }
 
 .furnitures-item__color {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.furnitures-item__color-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.furnitures-item__color-swatch {
     display: block;
     width: 24px;
     height: 24px;
     border-radius: 100%;
-    border: 1px solid rgba(8, 12, 9, 0.1);
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.furnitures-item__color-input:focus-visible + .furnitures-item__color-swatch {
+    outline: 2px solid #6b0609;
+    outline-offset: 2px;
+}
+
+.furnitures-item__color-input:checked + .furnitures-item__color-swatch {
+    border-color: #6b0609;
 }
 
 .furnitures-item__price {
