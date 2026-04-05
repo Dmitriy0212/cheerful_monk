@@ -1,25 +1,29 @@
-
+body.modal-open {
+    overflow: hidden;
+}
 
 
 .order-modal {
-  position: fixed;
-  z-index: 1000;
-  inset: 0;
+ display: none;
+  align-items: center;
+  justify-content: center;
   background: rgba(0,0,0,0.25);
-  padding: 48px 24px;
-
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
 }
 
 
 
 .modal-content {
-
   background: #fff;
   border-radius: 10px;
   width: 90%;
-  padding: 64px 20px;
-  position: absolute;
-  top: 50%;
+ max-height: 90vh;
+ overflow-y: auto;
+ padding: 64px 20px;
+ position: absolute;
+ top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
