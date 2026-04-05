@@ -3,6 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { getFurnitureItemById } from './baseUrl';
 import { initRatings } from './starsrendering';
 export async function productmodalRender(id) {
+  document.body.style.overflow = 'hidden';
   let slidesData = [];
   try {
     slidesData = await getFurnitureItemById(id);
@@ -127,7 +128,7 @@ export async function productmodalRender(id) {
   buttonContainer.classList.add('buttonRed');
   buttonContainer.textContent = 'Перейти до замовлення';
   infoContainer.appendChild(buttonContainer);
-
+  let orderModalMenu = document.querySelector('#orderModal');
   buttonContainer.addEventListener('click', () => {
     const selectedColor = document.querySelector(
       'input[name="color"]:checked'
@@ -150,9 +151,7 @@ export async function productmodalRender(id) {
     localStorage.setItem('selectedProduct', JSON.stringify(productData));
 
     targetProductmodal.parentElement.classList.remove('visibility-modal');
-
-    console.log(productData);
-
+    orderModalMenu.classList.add('visibility-modal');
     iziToast.success({
       title: 'Успех',
       message: 'Дані товару успішно обрані',

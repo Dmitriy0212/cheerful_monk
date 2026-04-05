@@ -11,7 +11,9 @@ function renderCategory(category) {
     <li 
       class="categories-item ${category.withAccent ? 'accent' : ''}"
       data-id="${category._id}"
-      style="background-image: url('/img/furniture-list-section/${category.image}');"
+      style="background-image: url('/img/furniture-list-section/${
+        category.image
+      }');"
     >
       <h4 class="categories-item__title">${category.name}</h4>
     </li>
@@ -21,7 +23,7 @@ function renderCategory(category) {
 function getImageById(id) {
   // ну це прікол якийсь, аххахахаха
   const arrImg = {
-    'all': 'a-stylish-furniture.webp',
+    all: 'a-stylish-furniture.webp',
     '66504a50a1b2c3d4e5f6a7b8': 'a-modern-fabric.webp',
     '66504a50a1b2c3d4e5f6a7b9': 'a-sleek-wooden.webp',
     '66504a50a1b2c3d4e5f6a7ba': 'a-queen-size.webp',
