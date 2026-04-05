@@ -5,8 +5,6 @@ import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => ({
-  base: '/cheerful_monk/',
-
   root: 'src',
 
   resolve: {
