@@ -4,7 +4,8 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
-export default defineConfig(({}) => ({
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/cheerful_monk/',
   root: 'src',
 
   resolve: {
