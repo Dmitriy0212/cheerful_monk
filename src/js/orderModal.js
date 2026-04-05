@@ -1,23 +1,5 @@
-/* const orderModal = document.getElementById("orderModal");
-const openOrderBtn = document.getElementById("openOrderModal"); /// первірити назву кнопки
-const closeBtn = orderModal.querySelector(".order-close");
 
-openOrderBtn.onclick = () => orderModal.style.display = "flex";
-document.body.classList.remov
-
-closeBtn.onclick = () => orderModal.style.display = "none";
-window.onclick = (e) => { if (e.target == orderModal) orderModal.style.display = "none"; }
-
-document.getElementById("orderForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  alert("Заявка відправлена!");
-  orderModal.style.display = "none";
-  this.reset();
-});
-
-*/
-
-import { postCreateUsersOrder } from './api.js'; // Проверьте имя файла!
+import { postCreateUsersOrder } from './baseUrl'
 
 const orderModal = document.getElementById("orderModal");
 const openOrderBtn = document.getElementById("openOrderModal");
