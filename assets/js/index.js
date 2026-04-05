@@ -19,7 +19,7 @@
     <li 
       class="categories-item ${e.withAccent?"accent":""}"
       data-id="${e._id}"
-      style="background-image: url('/img/furniture-list-section/${e.image}');"
+      style="background-image: url('../img/furniture-list-section/${e.image}');"
     >
       <h4 class="categories-item__title">${e.name}</h4>
     </li>
