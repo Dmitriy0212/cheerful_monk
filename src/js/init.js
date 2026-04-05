@@ -4,7 +4,7 @@ function init() {
   document.addEventListener('DOMContentLoaded', async () => {
     await createCategories();
     await createFurnitureList();
-    initSwiper();
+    await initSwiper();
   });
 }
 
