@@ -1,3 +1,6 @@
+import refs from './refs.js';
+import { loadFurnitures, PER_PAGE, renderFurnitures } from './furnitures.js';
+
 function renderCategories(categories) {
   return categories.map(category => renderCategory(category)).join('');
 }
@@ -6,7 +9,7 @@ function renderCategories(categories) {
 function renderCategory(category) {
   return `
     <li 
-      class="categories-item"
+      class="categories-item ${category.withAccent ? 'accent' : ''}"
       data-id="${category._id}"
       style="background-image: url('/img/furniture-list-section/${category.image}');"
     >
@@ -39,6 +42,26 @@ function constructCategoriesWithImages(categories) {
     const image = getImageById(category._id)
     return { ...category, image }
   })
+}
+
+refs.categories.addEventListener('click', async (e) => {
+  const item = e.target.closest('.categories-item');
+  if (!item) {
+    return;
+  }
+  const categoryId = item.dataset.id;
+  setAccent(item)
+  const categorySearch = categoryId && categoryId !== 'all' ? categoryId : null
+  let furnitureResponse = await loadFurnitures(1, PER_PAGE, categorySearch);
+  if (furnitureResponse.furnitures.length) {
+    refs.furnitureList.innerHTML = renderFurnitures(furnitureResponse.furnitures);
+  }
+})
+
+function setAccent(item) {
+  refs.categories.querySelectorAll('.accent')
+    .forEach(el => el.classList.remove('accent'))
+  item.classList.add('accent');
 }
 
 export { renderCategories, renderCategory, constructCategoriesWithImages };

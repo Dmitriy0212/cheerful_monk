@@ -1,9 +1,12 @@
 export const BASE_URL = 'https://furniture-store-v2.b.goit.study/api/';
 import axios from 'axios';
 
-export async function getFurnituresList(page, limit) {
+export async function getFurnituresList(page, limit, category = null) {
   try {
     const params = {limit: limit, page: page};
+    if (category) {
+      params.category = category;
+    }
     const response = await axios.get(`${BASE_URL}furnitures`, {params});
 
     return {

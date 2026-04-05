@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .categories-item::before{
@@ -59,7 +60,7 @@
     pointer-events: none;
 }
 
-.categories-item:hover::after{
+.accent::after{
     border-color: #6b0609;
 }
 
@@ -83,6 +84,8 @@
 
 .furnitures-item {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .furnitures-item__img {
@@ -106,6 +109,7 @@
     display: flex;
     gap: 16px;
     margin-bottom: 8px;
+    margin-top: auto
 }
 
 .furnitures-item__color {
@@ -113,6 +117,7 @@
     width: 24px;
     height: 24px;
     border-radius: 100%;
+    border: 1px solid rgba(8, 12, 9, 0.1);
 }
 
 .furnitures-item__price {
