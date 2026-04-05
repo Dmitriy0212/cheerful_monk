@@ -161,7 +161,6 @@ export async function productmodalRender(id) {
   });
 
   targetProductmodal.parentElement.addEventListener('click', e => {
-    debugger;
     if (e.target === targetProductmodal.parentElement) {
       targetProductmodal.parentElement.classList.remove('visibility-modal');
     }
