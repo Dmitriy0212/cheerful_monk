@@ -15,10 +15,11 @@ function renderCategory(category) {
     >
       <h4 class="categories-item__title">${category.name}</h4>
     </li>
-  `
+  `;
 }
 
-function getImageById(id) { // ну це прікол якийсь, аххахахаха
+function getImageById(id) {
+  // ну це прікол якийсь, аххахахаха
   const arrImg = {
     'all': 'a-stylish-furniture.webp',
     '66504a50a1b2c3d4e5f6a7b8': 'a-modern-fabric.webp',
@@ -33,34 +34,37 @@ function getImageById(id) { // ну це прікол якийсь, аххаха
     '66504a50a1b2c3d4e5f6a7c1': 'a-contemporary-bathroom.webp',
     '66504a50a1b2c3d4e5f6a7c2': 'a-cozy-outdoor.webp',
     '66504a50a1b2c3d4e5f6a7c3': 'a-curated-collection.webp',
-  }
+  };
   return arrImg[id] ?? '';
 }
 
 function constructCategoriesWithImages(categories) {
   return categories.map(category => {
-    const image = getImageById(category._id)
-    return { ...category, image }
-  })
+    const image = getImageById(category._id);
+    return { ...category, image };
+  });
 }
 
-refs.categories.addEventListener('click', async (e) => {
+refs.categories.addEventListener('click', async e => {
   const item = e.target.closest('.categories-item');
   if (!item) {
     return;
   }
   const categoryId = item.dataset.id;
-  setAccent(item)
-  const categorySearch = categoryId && categoryId !== 'all' ? categoryId : null
+  setAccent(item);
+  const categorySearch = categoryId && categoryId !== 'all' ? categoryId : null;
   let furnitureResponse = await loadFurnitures(1, PER_PAGE, categorySearch);
   if (furnitureResponse.furnitures.length) {
-    refs.furnitureList.innerHTML = renderFurnitures(furnitureResponse.furnitures);
+    refs.furnitureList.innerHTML = renderFurnitures(
+      furnitureResponse.furnitures
+    );
   }
-})
+});
 
 function setAccent(item) {
-  refs.categories.querySelectorAll('.accent')
-    .forEach(el => el.classList.remove('accent'))
+  refs.categories
+    .querySelectorAll('.accent')
+    .forEach(el => el.classList.remove('accent'));
   item.classList.add('accent');
 }
 
