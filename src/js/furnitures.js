@@ -28,7 +28,7 @@ function renderColors(furniture) {
   return furniture.color
     .map(
       (color, i) => `
-    <label class="furnitures-item__color">
+    <label class="furnitures-item__color ${color === '#FFFFFF' ? 'furnitures-item__color-swatch-white' : ''}">
       <input type="radio" class="furnitures-item__color-input" name="${groupName}" value="${color}"${i === 0 ? ' checked' : ''} />
       <span class="furnitures-item__color-swatch" style="background-color: ${color}"></span>
     </label>`
