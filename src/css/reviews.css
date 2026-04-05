@@ -1,0 +1,135 @@
+.revius {
+  padding: 64px 0;
+}
+.revius__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #202421;
+  margin-bottom: 24px;
+}
+
+.revius__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #202421;
+  margin-bottom: 80px;
+}
+.slider__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.slider__price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.swiper-wrapper > .slider__slide {
+  flex-direction: column;
+  display: flex;
+  gap: 24px;
+}
+.buttons-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-btn {
+  display: flex;
+  gap: 16px;
+}
+.revius-slider {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  display: flex;
+  padding: 0;
+  margin-bottom: 60px;
+  list-style: none;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: calc((100% - 40px) / 3);
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+.swiper-slide:last-child {
+  margin-right: 0;
+}
+
+.swiper-slide h3 {
+  gap: 24px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.slider__btn--prev,
+.slider__btn--next {
+  width: 46px;
+}
+
+.slider__btn--next::after,
+.slider__btn--prev::after {
+  display: none;
+}
+.swiper-navigation-icon {
+  display: none;
+}
+.slider__btn--prev {
+  left: 10px;
+}
+.slider__btn--next {
+  right: 10px;
+}
+
+.slider__pagination {
+  display: flex;
+  text-align: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.slider__bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #080c09;
+  opacity: 0.2;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.slider__bullet--active {
+  opacity: 1;
+}
+.slider__colors {
+  display: flex;
+  flex-direction: row;
+}
+.slider__color {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #f5deb3;
+}
+.swiper-slide {
+  position: relative !important;
+  left: 0px !important;
+  transform: translateX(0%) !important;
+  top: 0px !important;
+}
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
