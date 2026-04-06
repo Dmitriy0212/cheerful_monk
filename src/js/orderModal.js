@@ -31,9 +31,13 @@ if (orderForm) {
     e.preventDefault();
     
     const formData = new FormData(this);
+    const localData = localStorage.getItem("selectedProduct");
+    const localDataParsed = JSON.parse(localData);
     const orderData = {
       name: formData.get("name").trim(),
       phone: formData.get("phone").trim(),
+      modelId: localDataParsed.id,
+      color: localDataParsed.color,
       comment: formData.get("comment").trim(),
     };
 
