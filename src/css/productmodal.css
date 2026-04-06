@@ -163,6 +163,10 @@
     flex: 1;
   }
 
+  .main-image {
+    height: 308px;
+  }
+
   .title {
     font-size: 40px;
   }
