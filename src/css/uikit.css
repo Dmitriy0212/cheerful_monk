@@ -108,3 +108,7 @@
   border: 2px solid #000;
   transform: scale(1.2);
 }
+.visibility-modal {
+  z-index: 1000;
+  display: flex !important;
+}
