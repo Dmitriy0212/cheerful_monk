@@ -10,6 +10,7 @@ const closeModal = () => {
   if (orderModal) {
     orderModal.style.display = "none";
     document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
   }
 };
 
@@ -20,7 +21,12 @@ if (openOrderBtn) {
   });
 }
 
-if (closeBtn) closeBtn.onclick = closeModal;
+if (closeBtn) {
+  closeBtn.addEventListener('click' ,(e) => {
+    orderModal.classList.toggle('visibility-modal')
+    closeModal();
+  })
+}
 
 window.onclick = (e) => { 
   if (e.target === orderModal) closeModal(); 
@@ -31,19 +37,25 @@ if (orderForm) {
     e.preventDefault();
     
     const formData = new FormData(this);
+    const localData = localStorage.getItem("selectedProduct");
+    const localDataParsed = JSON.parse(localData);
     const orderData = {
       name: formData.get("name").trim(),
       phone: formData.get("phone").trim(),
+      modelId: localDataParsed.id,
+      color: localDataParsed.color,
       comment: formData.get("comment").trim(),
     };
 
     try {
       const result = await postCreateUsersOrder(orderData);
-      closeModal();
       this.reset();
+      closeModal();
+
       setTimeout(() => alert("Заявка успішно відправлена!"), 100);
     } catch (error) {
       alert("Помилка відправки. Перевірте дані.");
     }
+    document.body.style.overflow = '';
   });
 }
