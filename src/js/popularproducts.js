@@ -7,7 +7,7 @@ import { productmodalRender } from './productmodalrendering';
 export async function initSwiper() {
   const sliderWrapper = document.querySelector('.slider__wrapper');
   if (!sliderWrapper) {
-    console.error('sliderWrapper не найден!');
+    console.error('sliderWrapper не знайдено!');
     return;
   }
 
@@ -15,11 +15,10 @@ export async function initSwiper() {
   try {
     slidesData = await getPopularProducts();
   } catch (error) {
-    console.log('Помилка в doStuff:', error);
+    console.log('Помилка', error);
   }
 
   if (!Array.isArray(slidesData)) slidesData = [];
-  console.log('Полученные данные:', slidesData);
 
   sliderWrapper.innerHTML = a(slidesData);
   const images = document.querySelectorAll('.slider__image');
