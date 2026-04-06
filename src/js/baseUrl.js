@@ -1,16 +1,18 @@
 export const BASE_URL = 'https://furniture-store-v2.b.goit.study/api/';
 import axios from 'axios';
 
-export async function getFurnituresList(page, limit) {
+export async function getFurnituresList(page, limit, category = null) {
   try {
-    const response = await axios.get(`${BASE_URL}furnitures`, {
-      params: {
-        limit: limit,
-        page: page,
-      },
-    });
+    const params = {limit: limit, page: page};
+    if (category) {
+      params.category = category;
+    }
+    const response = await axios.get(`${BASE_URL}furnitures`, {params});
 
-    return response.data.furnitures;
+    return {
+      total: response.data.totalItems,
+      furnitures: response.data.furnitures,
+    };
   } catch (error) {
     console.error(
       'Помилка при запиті:',
@@ -51,13 +53,21 @@ export async function getFurnituresCategories() {
 }
 
 export async function postCreateUsersOrder(order) {
-  console.log('FAKE POST:', order);
+  try {
+    const response = await axios.post(`${BASE_URL}orders`, order, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ success: true });
-    }, 500);
-  });
+    return response.data;
+  } catch (error) {
+    console.error(
+      'Помилка при відправці форми',
+      error.response?.data || error.message
+    );
+    throw error;
+  }
 }
 
 export async function getFeedbacksList(page, limit) {

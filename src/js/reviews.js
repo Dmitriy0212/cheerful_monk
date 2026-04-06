@@ -1,19 +1,29 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { getFeedbacksList } from "./baseUrl.js";
+import { initRatings } from './starsrendering';
+import { getFeedbacksList } from './baseUrl';
 
-export async function fitbek() {
-  let content = document.querySelector('.sliderwrapper');
-  let fitmas = [];
+export async function initFeedbacksSwiper() {
+  const sliderWrapper = document.querySelector('.slider__wrapper-reviews');
+  if (!sliderWrapper) {
+    console.error('sliderWrapper не найден!');
+    return;
+  }
+
+  let slidesData = [];
   try {
-    fitmas = await getFeedbacksList(1, 12);
+    slidesData = await getFeedbacksList(1, 12);
   } catch (error) {
     console.log('Помилка в doStuff:', error);
   }
 
-  content.innerHTML = bdsm(fitmas);
-  const swiper = new Swiper('.revius-slider', {
+  if (!Array.isArray(slidesData)) slidesData = [];
+  console.log('Полученные данные:', slidesData);
+
+  sliderWrapper.innerHTML = a(slidesData);
+  initRatings();
+  const swiper = new Swiper('.slider', {
     pagination: {
       el: '.swiper-pagination',
       dynamicBullets: true,
@@ -22,8 +32,8 @@ export async function fitbek() {
       dynamicMainBullets: 7,
     },
     navigation: {
-      nextEl: '.sliderbtn--next',
-      prevEl: '.sliderbtn--prev',
+      nextEl: '.slider__btn--next',
+      prevEl: '.slider__btn--prev',
     },
     on: {
       init() {
@@ -40,20 +50,22 @@ export async function fitbek() {
     },
   });
 }
-function bdsm(fitmas) {
-  return fitmas
-    .map(item => {
-      return `<li class="slider__slide swiper-slide">
-        <p>${item.rate}</p>
-        <p class="slider__title">${item.descr}</p>
-        <p class="slider__price">${item.name}</p>
-        </li>`
-    })
-    .join('');
-}
 function updateButtons(swiper) {
-  const prevBtn = document.querySelector('.sliderbtn--prev');
-  const nextBtn = document.querySelector('.sliderbtn--next');
+  const prevBtn = document.querySelector('.slider__btn--prev');
+  const nextBtn = document.querySelector('.slider__btn--next');
   prevBtn.disabled = swiper.isBeginning;
   nextBtn.disabled = swiper.isEnd;
+}
+function a(slidesData) {
+  return slidesData
+    .map(slide => {
+      return `
+            <li class="slider__slide swiper-slide">
+           <div class="rating-rate" data-rating="${slide.rate}"></div>          
+          <p class="slider__title">${slide.descr}</p>
+          <p class="slider__price">${slide.name}</p>
+          </div>
+          `;
+    })
+    .join('');
 }
