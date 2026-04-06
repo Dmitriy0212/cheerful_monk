@@ -63,3 +63,52 @@
 .sliderArrows:active {
   background: #6b0609;
 }
+
+.rating-rate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.rating-rate > i {
+  color: #080c09;
+}
+
+.rating-rate > i::before {
+  font-size: 16px;
+}
+
+.color-option {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.color-option input {
+  display: none;
+}
+
+.color-option__circle {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.color-option:hover .color-option__circle {
+  transform: scale(1.1);
+}
+
+.color-option input:checked + .color-option__circle {
+  border-color: #6b0609;
+  transform: scale(1.2);
+}
+.visibility-modal {
+  z-index: 1000;
+  display: flex !important;
+}
