@@ -12,6 +12,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  min-width: 375px;
+  display: block;
 }
 
 .about-content {
@@ -42,6 +44,18 @@
   .about-content {
     margin-bottom: 24px;
   }
+}
+
+.about-image-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.about-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {
