@@ -1,9 +1,6 @@
 .popular-products {
   padding-top: 48px;
   padding-bottom: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .popular-products-title {
   font-weight: 700;
@@ -170,7 +167,11 @@
 .slider__loader.is-hidden {
   display: none;
 }
-
+.popular-products-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @keyframes spin {
   to {
     transform: translate(-50%, -50%) rotate(360deg);

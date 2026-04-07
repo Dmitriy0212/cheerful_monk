@@ -52,6 +52,11 @@ export async function initSwiper() {
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 7,
+      onlyInViewport: true,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
     },
     navigation: {
       nextEl: '.slider__btn--next',
@@ -72,6 +77,7 @@ export async function initSwiper() {
     },
   });
 }
+
 function updateButtons(swiper) {
   const prevBtn = document.querySelector('.slider__btn--prev');
   const nextBtn = document.querySelector('.slider__btn--next');

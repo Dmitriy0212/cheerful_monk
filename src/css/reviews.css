@@ -1,8 +1,5 @@
 .reviews {
-  padding: 64px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 64px 0;
 }
 .reviews-title {
   font-weight: 700;
@@ -127,16 +124,20 @@
 .rating label:hover ~ label {
   color: orange;
 }
-
+.reviews-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media only screen and (min-width: 768px) {
   .reviews {
-    padding: 32px;
+    padding: 32px 0;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .reviews {
-    padding: 64px;
+    padding: 64px 0;
   }
   .reviews-title {
     font-size: 48px;
