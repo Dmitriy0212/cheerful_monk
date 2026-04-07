@@ -1,3 +1,6 @@
+body {
+  scroll-behavior: smooth;
+}
 body.modal-open {
   overflow: hidden;
 }
