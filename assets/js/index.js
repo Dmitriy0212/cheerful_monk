@@ -28,39 +28,31 @@ It can be › `+s);return}e=r||window.innerWidth<=l?a.position==`bottomLeft`||a.
         translate3d(${p}, ${m}, ${h}px)
         rotateZ(${i.rotate?r?-_:_:0}deg)
         scale(${S})
-      `;if(i.slideShadows){let e=l.querySelector(`.swiper-slide-shadow`);e||=Na(`cards`,l),e&&(e.style.opacity=Math.min(Math.max((Math.abs(d)-.5)/.5,0),1))}l.style.zIndex=-Math.abs(Math.round(u))+t.length;let w=ka(i,l);w.style.transform=C}},setTransition:t=>{let n=e.slides.map(e=>_r(e));n.forEach(e=>{e.style.transitionDuration=`${t}ms`,e.querySelectorAll(`.swiper-slide-shadow`).forEach(e=>{e.style.transitionDuration=`${t}ms`})}),Aa({swiper:e,duration:t,transformElements:n})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:e.params.cardsEffect.rotate?3:2,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}var Ra=[ia,aa,oa,la,ua,da,fa,pa,ma,ha,ga,_a,va,ya,ba,xa,Da,ja,Ma,Pa,Fa,Ia,La];ra.use(Ra);async function za(){let e=document.querySelector(`.slider__wrapper`);if(!e){console.error(`sliderWrapper не знайдено!`);return}let t=[];try{t=await Nn()}catch(e){console.log(`Помилка`,e)}Array.isArray(t)||(t=[]),e.innerHTML=Va(t),document.querySelectorAll(`.slider__image`).forEach(e=>{let t=e.previousElementSibling;e.complete?(e.classList.add(`is-loaded`),t.classList.add(`is-hidden`)):(e.addEventListener(`load`,()=>{e.classList.add(`is-loaded`),t.classList.add(`is-hidden`)}),e.addEventListener(`error`,()=>{t.classList.add(`is-hidden`)}))}),e.addEventListener(`click`,e=>{let t=e.target.closest(`.furnitures-item__btn`);if(!t)return;let n=t.dataset.id;Hn(n)});let n=new ra(`.slider`,{pagination:{el:`.slider .swiper-pagination`,clickable:!0,dynamicMainBullets:7,dynamicBullets:!0},navigation:{nextEl:`.pagination-slider__btn--next`,prevEl:`.pagination-slider__btn--prev`},on:{init(){Ba(this)},slideChange(){Ba(this)}},breakpoints:{300:{slidesPerView:1,slidesPerGroup:1,spaceBetween:0},768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:24},1440:{slidesPerView:4,slidesPerGroup:4,spaceBetween:24}}}),r=document.querySelector(`.slider`);r.setAttribute(`tabindex`,`0`),r.addEventListener(`keydown`,e=>{e.key===`ArrowRight`&&n.slideNext(),e.key===`ArrowLeft`&&n.slidePrev()})}function Ba(e){let t=document.querySelector(`.pagination-slider__btn--prev`),n=document.querySelector(`.pagination-slider__btn--next`);t.disabled=e.isBeginning,n.disabled=e.isEnd}function Va(e){return e.map(e=>{let t=Array.isArray(e.images)?e.images:[e.images],n=Array.isArray(e.color)?e.color:[e.color];return t.map((t,r)=>`
-            
-  <li class="slider__slide swiper-slide">
-    
-    <div class="slider__img-wrapper product-img">
-      <div class="slider__loader"></div>
+      `;if(i.slideShadows){let e=l.querySelector(`.swiper-slide-shadow`);e||=Na(`cards`,l),e&&(e.style.opacity=Math.min(Math.max((Math.abs(d)-.5)/.5,0),1))}l.style.zIndex=-Math.abs(Math.round(u))+t.length;let w=ka(i,l);w.style.transform=C}},setTransition:t=>{let n=e.slides.map(e=>_r(e));n.forEach(e=>{e.style.transitionDuration=`${t}ms`,e.querySelectorAll(`.swiper-slide-shadow`).forEach(e=>{e.style.transitionDuration=`${t}ms`})}),Aa({swiper:e,duration:t,transformElements:n})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:e.params.cardsEffect.rotate?3:2,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}var Ra=[ia,aa,oa,la,ua,da,fa,pa,ma,ha,ga,_a,va,ya,ba,xa,Da,ja,Ma,Pa,Fa,Ia,La];ra.use(Ra);async function za(){let e=document.querySelector(`.slider__wrapper`);if(!e){console.error(`sliderWrapper не знайдено!`);return}let t=[];try{t=await Nn()}catch(e){console.log(`Помилка`,e)}Array.isArray(t)||(t=[]),e.innerHTML=Va(t),document.querySelectorAll(`.slider__image`).forEach(e=>{let t=e.previousElementSibling;e.complete?(e.classList.add(`is-loaded`),t.classList.add(`is-hidden`)):(e.addEventListener(`load`,()=>{e.classList.add(`is-loaded`),t.classList.add(`is-hidden`)}),e.addEventListener(`error`,()=>{t.classList.add(`is-hidden`)}))}),e.addEventListener(`click`,e=>{let t=e.target.closest(`.furnitures-item__btn`);if(!t)return;let n=t.dataset.id;Hn(n)});let n=new ra(`.slider`,{pagination:{el:`.slider .swiper-pagination`,clickable:!0,dynamicMainBullets:7,dynamicBullets:!0},navigation:{nextEl:`.pagination-slider__btn--next`,prevEl:`.pagination-slider__btn--prev`},on:{init(){Ba(this)},slideChange(){Ba(this)}},breakpoints:{300:{slidesPerView:1,slidesPerGroup:1,spaceBetween:0},768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:24},1440:{slidesPerView:4,slidesPerGroup:4,spaceBetween:24}}}),r=document.querySelector(`.slider`);r.setAttribute(`tabindex`,`0`),r.addEventListener(`keydown`,e=>{e.key===`ArrowRight`&&n.slideNext(),e.key===`ArrowLeft`&&n.slidePrev()})}function Ba(e){let t=document.querySelector(`.pagination-slider__btn--prev`),n=document.querySelector(`.pagination-slider__btn--next`);t.disabled=e.isBeginning,n.disabled=e.isEnd}function Va(e){return e.map(e=>{let t=Array.isArray(e.images)?e.images:[e.images],n=Array.isArray(e.color)?e.color:[e.color];return t.map((t,r)=>`<li class="slider__slide swiper-slide">
+  <div class="slider__img-wrapper product-img">
+    <div class="slider__loader"></div>
+    <img
+      class="slider__image"
+      src="${t}"
+      alt="${e.name}"
+      loading="lazy"
+    />
+  </div>
+  <h3 class="furnitures-item__title">${e.name}</h3>
 
-      <img 
-        class="slider__image" 
-        src="${t}" 
-        alt="${e.name}"
-        loading="lazy"
-      >
-    </div>
-<h3 class="furnitures-item__title">${e.name}</h3>
-  
-      
-      
-      <ul class="furnitures-item__color-list">
-        ${n.map(e=>`<li class="slider__color" style="background-color: ${e}"></li>`).join(``)}
-      </ul>
+  <ul class="furnitures-item__color-list">
+    ${n.map(e=>`
+    <li class="slider__color" style="background-color: ${e}"></li>
+    `).join(``)}
+  </ul>
 
-      <p class="furnitures-item__price">${e.price} грн</p>
-    
+  <p class="furnitures-item__price">${e.price} грн</p>
 
-    <button class="furnitures-item__btn buttonWhite" data-id="${e._id}">
-      Детальніше
-    </button>
-  </li>
-`).join(``)}).join(``)}async function Ha(){let e=document.querySelector(`.slider__wrapper-reviews`);if(!e){console.error(`sliderWrapper не найден!`);return}let t=[];try{t=await Mn(1,12)}catch(e){console.log(`Помилка в doStuff:`,e)}Array.isArray(t)||(t=[]),e.innerHTML=Wa(t),Vn(),new ra(`.slider-reviews-cont`,{pagination:{el:`.swiper-pagination`,clickable:!0,dynamicBullets:!0,dynamicMainBullets:7},keyboard:{enabled:!0,onlyInViewport:!1},navigation:{nextEl:`.slider__btn--next`,prevEl:`.slider__btn--prev`},on:{init(){Ua(this)},slideChange(){Ua(this)}},breakpoints:{300:{slidesPerView:1,slidesPerGroup:1,spaceBetween:0},768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:24},1440:{slidesPerView:3,slidesPerGroup:3,spaceBetween:24}}})}function Ua(e){let t=document.querySelector(`.slider__btn--prev`),n=document.querySelector(`.slider__btn--next`);t.disabled=e.isBeginning,n.disabled=e.isEnd}function Wa(e){return e.map(e=>`
-            <li class="slider__slide swiper-slide">
-           <div class="rating-rate" data-rating="${e.rate}"></div>          
-          <p class="slider__title">${e.descr}</p>
-          <p class="slider__price">${e.name}</p>
-          </div>
-          `).join(``)}function Ga(){document.addEventListener(`DOMContentLoaded`,async()=>{await ir(),await ar(),await za(),await Ha()})}Ga();
+  <button class="furnitures-item__btn buttonWhite" data-id="${e._id}">
+    Детальніше
+  </button>
+</li>`).join(``)}).join(``)}async function Ha(){let e=document.querySelector(`.slider__wrapper-reviews`);if(!e){console.error(`sliderWrapper не найден!`);return}let t=[];try{t=await Mn(1,12)}catch(e){console.log(`Помилка в doStuff:`,e)}Array.isArray(t)||(t=[]),e.innerHTML=Wa(t),Vn(),new ra(`.slider-reviews-cont`,{pagination:{el:`.swiper-pagination`,clickable:!0,dynamicBullets:!0,dynamicMainBullets:7},keyboard:{enabled:!0,onlyInViewport:!1},navigation:{nextEl:`.slider__btn--next`,prevEl:`.slider__btn--prev`},on:{init(){Ua(this)},slideChange(){Ua(this)}},breakpoints:{300:{slidesPerView:1,slidesPerGroup:1,spaceBetween:0},768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:24},1440:{slidesPerView:3,slidesPerGroup:3,spaceBetween:24}}})}function Ua(e){let t=document.querySelector(`.slider__btn--prev`),n=document.querySelector(`.slider__btn--next`);t.disabled=e.isBeginning,n.disabled=e.isEnd}function Wa(e){return e.map(e=>`<li class="slider__slide swiper-slide">
+  <div class="rating-rate" data-rating="${e.rate}"></div>
+  <p class="slider__title">${e.descr}</p>
+  <p class="slider__price">${e.name}</p>
+</li>`).join(``)}function Ga(){document.addEventListener(`DOMContentLoaded`,async()=>{await ir(),await ar(),await za(),await Ha()})}Ga();
