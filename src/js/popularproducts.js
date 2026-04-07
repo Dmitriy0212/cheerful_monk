@@ -48,39 +48,44 @@ export async function initSwiper() {
   });
   const swiper = new Swiper('.slider', {
     pagination: {
-      el: '.swiper-pagination',
+      el: '.slider .swiper-pagination',
       clickable: true,
-      dynamicBullets: true,
       dynamicMainBullets: 7,
-      onlyInViewport: true,
-    },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
+      dynamicBullets: true,
     },
     navigation: {
-      nextEl: '.slider__btn--next',
-      prevEl: '.slider__btn--prev',
+      nextEl: '.pagination-slider__btn--next',
+      prevEl: '.pagination-slider__btn--prev',
     },
+
     on: {
       init() {
-        updateButtons(this);
+        clickUpdateButtons(this);
       },
       slideChange() {
-        updateButtons(this);
+        clickUpdateButtons(this);
       },
     },
+
     breakpoints: {
       300: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 0 },
       768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 24 },
       1440: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 24 },
     },
   });
+  const container = document.querySelector('.slider');
+
+  container.setAttribute('tabindex', '0');
+
+  container.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') swiper.slideNext();
+    if (e.key === 'ArrowLeft') swiper.slidePrev();
+  });
 }
 
-function updateButtons(swiper) {
-  const prevBtn = document.querySelector('.slider__btn--prev');
-  const nextBtn = document.querySelector('.slider__btn--next');
+function clickUpdateButtons(swiper) {
+  const prevBtn = document.querySelector('.pagination-slider__btn--prev');
+  const nextBtn = document.querySelector('.pagination-slider__btn--next');
   prevBtn.disabled = swiper.isBeginning;
   nextBtn.disabled = swiper.isEnd;
 }

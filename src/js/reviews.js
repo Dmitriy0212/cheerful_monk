@@ -23,13 +23,16 @@ export async function initFeedbacksSwiper() {
 
   sliderWrapper.innerHTML = a(slidesData);
   initRatings();
-  const swiper = new Swiper('.slider', {
+  const swiper = new Swiper('.slider-reviews-cont', {
     pagination: {
       el: '.swiper-pagination',
-      dynamicBullets: true,
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 7,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
     },
     navigation: {
       nextEl: '.slider__btn--next',

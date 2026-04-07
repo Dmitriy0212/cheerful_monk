@@ -65,22 +65,22 @@
   justify-content: center;
   align-items: center;
 }
-.slider__btn--prev,
-.slider__btn--next {
+.pagination-slider__btn--prev,
+.pagination-slider__btn--next {
   width: 46px;
 }
 
-.slider__btn--next::after,
-.slider__btn--prev::after {
+.pagination-slider__btn--next::after,
+.pagination-slider__btn--prev::after {
   display: none;
 }
 .swiper-navigation-icon {
   display: none;
 }
-.slider__btn--prev {
+.pagination-slider__btn--prev {
   left: 10px;
 }
-.slider__btn--next {
+.pagination-slider__btn--next {
   right: 10px;
 }
 .slider__btn--disc {
