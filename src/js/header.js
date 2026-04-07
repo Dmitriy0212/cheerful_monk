@@ -1,38 +1,36 @@
-const header = document.querySelector('.header-section');
-const burgerBtn = document.querySelector('.burger-btn');
-const closeBtn = document.querySelector('.close-btn'); // мобільне меню
-const closeBtnHeader = document.querySelector('.close-btn-header'); // планшет
-const overlay = document.querySelector('.overlay');
-const mobileMenu = document.querySelector('.mobile-menu');
-const menuLinks = document.querySelectorAll('.mobile-nav a');
+const header = document.querySelector(".nav-bar-mob");
+const burgerBtn = document.querySelector(".header-burger-btn");
+const closeBtn = document.querySelector(".header-close-btn");
+const headerCloseMobile = document.querySelector(".header-list-row");
+const headerShadov = document.querySelector(".header-shadov");
 
+const toggleMenu = async () => {
+  if (document.body.style.overflow !== "hidden") {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  headerShadov.classList.toggle("is-open");
+  header.classList.toggle("is-open");
+  burgerBtn.classList.toggle("hidann-button");
+  closeBtn.classList.toggle("hidann-button");
+};
 
-function openMenu() {
-  mobileMenu.classList.add('active');
-  overlay.classList.add('active');
-  header.classList.add('menu-open');
-  document.body.classList.add('no-scroll');
+const toggleMenuFromShadov = async (e) => {
+  document.body.style.overflow = "";
+  e.preventDefault();
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  headerShadov.classList.toggle("is-open");
+  header.classList.toggle("is-open");
+  burgerBtn.classList.toggle("hidann-button");
+  closeBtn.classList.toggle("hidann-button");
+};
+
+burgerBtn.addEventListener("click", toggleMenu);
+closeBtn.addEventListener("click", toggleMenu);
+headerShadov.addEventListener("click", toggleMenuFromShadov);
+for (const item of headerCloseMobile.children) {
+  const link = item.querySelector("a");
+  if (link) link.addEventListener("click", toggleMenu);
 }
-
-
-function closeMenu() {
-  mobileMenu.classList.remove('active');
-  overlay.classList.remove('active');
-  header.classList.remove('menu-open');
-  document.body.classList.remove('no-scroll');
-}
-
-
-burgerBtn.addEventListener('click', openMenu);
-
-
-if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-if (closeBtnHeader) closeBtnHeader.addEventListener('click', closeMenu);
-
-
-if (overlay) overlay.addEventListener('click', closeMenu);
-
-
-menuLinks.forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
