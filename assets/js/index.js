@@ -14,7 +14,7 @@ It can be › `+s);return}e=r||window.innerWidth<=l?a.position==`bottomLeft`||a.
     </li>
   `}function qn(e){let t=`furniture-color-${e._id}`;return e.color.map((e,n)=>`
     <label class="furnitures-item__color ${e===`#FFFFFF`?`furnitures-item__color-swatch-white`:``}">
-      <input type="radio" class="furnitures-item__color-input" name="${t}" value="${e}"${n===0?` checked`:``} />
+      <input type="radio" class="furnitures-item__color-input" name="${t}" aria-label="Колір ${e}" value="${e}"${n===0?` checked`:``} />
       <span class="furnitures-item__color-swatch" style="background-color: ${e}"></span>
     </label>`).join(``)}async function Jn(e=1,t=8,n=null){Yn(),Zn(),Wn=n;let r=await On(e,t,n);return Un*8<r.total&&Xn(),Qn(),r}V.furnitureList.addEventListener(`click`,async e=>{let t=e.target.closest(`.furnitures-item__btn`);if(!t)return;let n=t.closest(`.furnitures-item`);if(!n)return;let r=n.dataset.id;r&&await Hn(r)}),V.loadMore.addEventListener(`click`,async()=>{try{Un+=1;let e=await Jn(Un,8,Wn);if(e.furnitures.length){let t=Gn(e.furnitures);V.furnitureList.insertAdjacentHTML(`beforeend`,t)}}catch{}});function Yn(){V.loadMore.style.display=`none`}function Xn(){V.loadMore.style.display=`block`}function Zn(){V.loader.classList.toggle(`is-hidden`)}function Qn(){V.loader.classList.toggle(`is-hidden`)}function $n(e){return e.map(e=>er(e)).join(``)}function er(e){let t=`/cheerful_monk/furniture-list-section/${e.image}`;return`
     <li 
