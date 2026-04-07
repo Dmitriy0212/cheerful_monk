@@ -110,6 +110,7 @@ export async function productmodalRender(id) {
     colorInput.type = 'radio';
     colorInput.name = 'color';
     colorInput.value = color;
+    colorInput.ariaLabel = `Колір ${color}`;
     colorLabel.appendChild(colorInput);
 
     let colorSpan = document.createElement('span');
