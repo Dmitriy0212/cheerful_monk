@@ -103,7 +103,7 @@ function a(slidesData) {
             
   <li class="slider__slide swiper-slide">
     
-    <div class="slider__img-wrapper">
+    <div class="slider__img-wrapper product-img">
       <div class="slider__loader"></div>
 
       <img 

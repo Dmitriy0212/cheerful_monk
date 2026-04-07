@@ -65,6 +65,7 @@
 
   .about-content {
     flex: 1;
+    margin: 0;
   }
 
   .about-title {
