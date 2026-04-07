@@ -45,12 +45,14 @@ function renderColors(furniture) {
 
 async function loadFurnitures(page = 1, limit = PER_PAGE, category = null) {
   hideLoadMore();
+  showLoader()
   categorySearch = category;
   const furnitureResponse = await getFurnituresList(page, limit, category);
   const hasMore = currentPage * PER_PAGE < furnitureResponse.total;
   if (hasMore) {
     showLoadMore();
   }
+  hideLoader()
   return furnitureResponse;
 }
 
@@ -92,6 +94,13 @@ function hideLoadMore() {
 
 function showLoadMore() {
   refs.loadMore.style.display = 'block';
+}
+function showLoader() {
+  refs.loader.classList.toggle('is-hidden');
+}
+
+function hideLoader() {
+  refs.loader.classList.toggle('is-hidden');
 }
 
 export { renderFurnitures, renderFurniture, loadFurnitures, PER_PAGE };
