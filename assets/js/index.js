@@ -32,7 +32,7 @@ It can be › `+s);return}e=r||window.innerWidth<=l?a.position==`bottomLeft`||a.
             
   <li class="slider__slide swiper-slide">
     
-    <div class="slider__img-wrapper">
+    <div class="slider__img-wrapper product-img">
       <div class="slider__loader"></div>
 
       <img 
