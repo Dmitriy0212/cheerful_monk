@@ -99,41 +99,34 @@ function a(slidesData) {
       const colors = Array.isArray(slide.color) ? slide.color : [slide.color];
       return images
         .map((nameItem, index) => {
-          return `
-            
-  <li class="slider__slide swiper-slide">
-    
-    <div class="slider__img-wrapper product-img">
-      <div class="slider__loader"></div>
+          return `<li class="slider__slide swiper-slide">
+  <div class="slider__img-wrapper product-img">
+    <div class="slider__loader"></div>
+    <img
+      class="slider__image"
+      src="${nameItem}"
+      alt="${slide.name}"
+      loading="lazy"
+    />
+  </div>
+  <h3 class="furnitures-item__title">${slide.name}</h3>
 
-      <img 
-        class="slider__image" 
-        src="${nameItem}" 
-        alt="${slide.name}"
-        loading="lazy"
-      >
-    </div>
-<h3 class="furnitures-item__title">${slide.name}</h3>
-  
-      
-      
-      <ul class="furnitures-item__color-list">
-        ${colors
-          .map(
-            color =>
-              `<li class="slider__color" style="background-color: ${color}"></li>`
-          )
-          .join('')}
-      </ul>
+  <ul class="furnitures-item__color-list">
+    ${colors
+      .map(
+        color => `
+    <li class="slider__color" style="background-color: ${color}"></li>
+    `
+      )
+      .join('')}
+  </ul>
 
-      <p class="furnitures-item__price">${slide.price} грн</p>
-    
+  <p class="furnitures-item__price">${slide.price} грн</p>
 
-    <button class="furnitures-item__btn buttonWhite" data-id="${slide._id}">
-      Детальніше
-    </button>
-  </li>
-`;
+  <button class="furnitures-item__btn buttonWhite" data-id="${slide._id}">
+    Детальніше
+  </button>
+</li>`;
         })
         .join('');
     })

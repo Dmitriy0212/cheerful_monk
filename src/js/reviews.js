@@ -61,13 +61,11 @@ function updateButtons(swiper) {
 function a(slidesData) {
   return slidesData
     .map(slide => {
-      return `
-            <li class="slider__slide swiper-slide">
-           <div class="rating-rate" data-rating="${slide.rate}"></div>          
-          <p class="slider__title">${slide.descr}</p>
-          <p class="slider__price">${slide.name}</p>
-          </div>
-          `;
+      return `<li class="slider__slide swiper-slide">
+  <div class="rating-rate" data-rating="${slide.rate}"></div>
+  <p class="slider__title">${slide.descr}</p>
+  <p class="slider__price">${slide.name}</p>
+</li>`;
     })
     .join('');
 }
