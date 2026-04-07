@@ -21,7 +21,8 @@ export async function initFeedbacksSwiper() {
   if (!Array.isArray(slidesData)) slidesData = [];
 
   sliderWrapper.innerHTML = a(slidesData);
-  initRatings();
+  const ratingsBloc = document.querySelector('.slider__wrapper-reviews');
+  initRatings(ratingsBloc);
   const swiper = new Swiper('.slider-reviews-cont', {
     pagination: {
       el: '.swiper-pagination',

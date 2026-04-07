@@ -103,6 +103,6 @@
 }
 
 .color-option input:checked + .color-option__circle {
-  border-color: #838584;
+  border: 4px solid #838584;
   transform: scale(1.2);
 }
