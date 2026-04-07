@@ -4,7 +4,12 @@ const orderModal = document.getElementById('orderModal');
 const openOrderBtn = document.getElementById('openOrderModal');
 const closeBtn = document.querySelector('.order-close');
 const orderForm = document.getElementById('orderForm');
-
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    orderModal.classList.remove('visibility-modal');
+    document.body.style.overflow = '';
+  }
+});
 const closeModal = () => {
   if (orderModal) {
     orderModal.style.display = 'none';
