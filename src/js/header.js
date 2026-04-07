@@ -1,36 +1,48 @@
-const header = document.querySelector(".nav-bar-mob");
-const burgerBtn = document.querySelector(".header-burger-btn");
-const closeBtn = document.querySelector(".header-close-btn");
-const headerCloseMobile = document.querySelector(".header-list-row");
-const headerShadov = document.querySelector(".header-shadov");
+const header = document.querySelector('.nav-bar-mob');
+const burgerBtn = document.querySelector('.header-burger-btn');
+const closeBtn = document.querySelector('.header-close-btn');
+const headerCloseMobile = document.querySelector('.header-list-row');
+const headerShadov = document.querySelector('.header-shadov');
 
-const toggleMenu = async () => {
-  if (document.body.style.overflow !== "hidden") {
-    document.body.style.overflow = "hidden";
+const toggleMenu = () => {
+  if (document.body.style.overflow !== 'hidden') {
+    document.body.style.overflow = 'hidden';
   } else {
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
   }
-  await new Promise((resolve) => requestAnimationFrame(resolve));
-  headerShadov.classList.toggle("is-open");
-  header.classList.toggle("is-open");
-  burgerBtn.classList.toggle("hidann-button");
-  closeBtn.classList.toggle("hidann-button");
+
+  headerShadov.classList.toggle('is-open');
+  header.classList.toggle('is-open');
+  burgerBtn.classList.toggle('hidann-button');
+  closeBtn.classList.toggle('hidann-button');
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
 };
 
-const toggleMenuFromShadov = async (e) => {
-  document.body.style.overflow = "";
+const toggleMenuFromShadov = async e => {
+  document.body.style.overflow = '';
   e.preventDefault();
-  await new Promise((resolve) => requestAnimationFrame(resolve));
-  headerShadov.classList.toggle("is-open");
-  header.classList.toggle("is-open");
-  burgerBtn.classList.toggle("hidann-button");
-  closeBtn.classList.toggle("hidann-button");
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  headerShadov.classList.toggle('is-open');
+  header.classList.toggle('is-open');
+  burgerBtn.classList.toggle('hidann-button');
+  closeBtn.classList.toggle('hidann-button');
 };
 
-burgerBtn.addEventListener("click", toggleMenu);
-closeBtn.addEventListener("click", toggleMenu);
-headerShadov.addEventListener("click", toggleMenuFromShadov);
+burgerBtn.addEventListener('click', toggleMenu);
+closeBtn.addEventListener('click', toggleMenu);
+headerShadov.addEventListener('click', toggleMenuFromShadov);
 for (const item of headerCloseMobile.children) {
-  const link = item.querySelector("a");
-  if (link) link.addEventListener("click", toggleMenu);
+  const link = item.querySelector('a');
+  if (link) link.addEventListener('click', toggleMenu);
 }
