@@ -19,7 +19,6 @@ export async function initFeedbacksSwiper() {
   }
 
   if (!Array.isArray(slidesData)) slidesData = [];
-  console.log('Полученные данные:', slidesData);
 
   sliderWrapper.innerHTML = a(slidesData);
   initRatings();
