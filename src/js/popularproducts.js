@@ -41,7 +41,7 @@ export async function initSwiper() {
     }
   });
   sliderWrapper.addEventListener('click', e => {
-    const btn = e.target.closest('.slider__btn--disc');
+    const btn = e.target.closest('.furnitures-item__btn');
     if (!btn) return;
     const id = btn.dataset.id;
     productmodalRender(id);
@@ -102,11 +102,11 @@ function a(slidesData) {
         loading="lazy"
       >
     </div>
-
-    <div class="slider__info">
-      <p class="slider__title">${slide.name}</p>
+<h3 class="furnitures-item__title">${slide.name}</h3>
+  
       
-      <ul class="slider__colors">
+      
+      <ul class="furnitures-item__color-list">
         ${colors
           .map(
             color =>
@@ -115,10 +115,10 @@ function a(slidesData) {
           .join('')}
       </ul>
 
-      <p class="slider__price">${slide.price} грн</p>
-    </div>
+      <p class="furnitures-item__price">${slide.price} грн</p>
+    
 
-    <button class="buttonWhite slider__btn--disc" data-id="${slide._id}">
+    <button class="furnitures-item__btn buttonWhite" data-id="${slide._id}">
       Детальніше
     </button>
   </li>
