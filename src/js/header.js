@@ -1,38 +1,36 @@
-async function initMobileMenu() {
-  const header = document.querySelector('.header-section');
-  const openBtn = document.querySelector('.burger-btn');
-  const closeBtn = document.querySelector('.close-btn');
-  const closeBtnHeader = document.querySelector('.close-btn-header');
-  const overlay = document.querySelector('.overlay');
-  const menu = document.querySelector('.mobile-menu');
-  const menuLinks = document.querySelectorAll('.mobile-nav a');
+const header = document.querySelector(".nav-bar-mob");
+const burgerBtn = document.querySelector(".header-burger-btn");
+const closeBtn = document.querySelector(".header-close-btn");
+const headerCloseMobile = document.querySelector(".header-list-row");
+const headerShadov = document.querySelector(".header-shadov");
 
-  const toggleMenu = (forceState) => {
-    requestAnimationFrame(() => {
-      const isOpen = menu.classList.contains('active');
-      const shouldOpen = forceState !== undefined ? forceState : !isOpen;
+const toggleMenu = async () => {
+  if (document.body.style.overflow !== "hidden") {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  headerShadov.classList.toggle("is-open");
+  header.classList.toggle("is-open");
+  burgerBtn.classList.toggle("hidann-button");
+  closeBtn.classList.toggle("hidann-button");
+};
 
-      menu.classList.toggle('active', shouldOpen);
-      overlay.classList.toggle('active', shouldOpen);
-      header.classList.toggle('menu-open', shouldOpen);
-      document.body.classList.toggle('no-scroll', shouldOpen);
-    });
-  };
+const toggleMenuFromShadov = async (e) => {
+  document.body.style.overflow = "";
+  e.preventDefault();
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  headerShadov.classList.toggle("is-open");
+  header.classList.toggle("is-open");
+  burgerBtn.classList.toggle("hidann-button");
+  closeBtn.classList.toggle("hidann-button");
+};
 
-  // відкриття
-  if (openBtn) openBtn.addEventListener('click', () => toggleMenu(true));
-
-  // закриття
-  if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
-  if (closeBtnHeader) closeBtnHeader.addEventListener('click', () => toggleMenu(false));
-  if (overlay) overlay.addEventListener('click', () => toggleMenu(false));
-
-  // клік по пункту меню
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => toggleMenu(false));
-  });
+burgerBtn.addEventListener("click", toggleMenu);
+closeBtn.addEventListener("click", toggleMenu);
+headerShadov.addEventListener("click", toggleMenuFromShadov);
+for (const item of headerCloseMobile.children) {
+  const link = item.querySelector("a");
+  if (link) link.addEventListener("click", toggleMenu);
 }
-
-document.addEventListener('DOMContentLoaded', initMobileMenu);
-
-export default initMobileMenu;
