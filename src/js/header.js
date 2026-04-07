@@ -3,6 +3,7 @@ const burgerBtn = document.querySelector('.header-burger-btn');
 const closeBtn = document.querySelector('.header-close-btn');
 const headerCloseMobile = document.querySelector('.header-list-row');
 const headerShadov = document.querySelector('.header-shadov');
+const headerNav = document.querySelector('.burger-list-column');
 
 const toggleMenu = () => {
   if (document.body.style.overflow !== 'hidden') {
@@ -32,11 +33,37 @@ const toggleMenu = () => {
 const toggleMenuFromShadov = async e => {
   document.body.style.overflow = '';
   e.preventDefault();
-  await new Promise(resolve => requestAnimationFrame(resolve));
   headerShadov.classList.toggle('is-open');
   header.classList.toggle('is-open');
   burgerBtn.classList.toggle('hidann-button');
   closeBtn.classList.toggle('hidann-button');
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
+};
+
+const toggleHeaderNav = async e => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  });
 };
 
 burgerBtn.addEventListener('click', toggleMenu);
@@ -45,4 +72,9 @@ headerShadov.addEventListener('click', toggleMenuFromShadov);
 for (const item of headerCloseMobile.children) {
   const link = item.querySelector('a');
   if (link) link.addEventListener('click', toggleMenu);
+}
+
+for (const item of headerNav.children) {
+  const link = item.querySelector('a');
+  if (link) link.addEventListener('click', toggleHeaderNav);
 }
