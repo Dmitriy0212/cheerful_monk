@@ -78,6 +78,7 @@
   height: 197px;
   overflow: hidden;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .thumb img {

@@ -134,6 +134,13 @@ export async function productmodalRender(id) {
   buttonContainer.textContent = 'Перейти до замовлення';
   infoContainer.appendChild(buttonContainer);
   let orderModalMenu = document.querySelector('#orderModal');
+
+  mainImageContent.addEventListener('click', e => {
+    const clickedThumb = mainImage.children[0].src;
+    console.log(e.target.src);
+    mainImage.children[0].src = e.target.src;
+    e.target.src = clickedThumb;
+  });
   buttonContainer.addEventListener('click', () => {
     const selectedColor = document.querySelector(
       'input[name="color"]:checked'
