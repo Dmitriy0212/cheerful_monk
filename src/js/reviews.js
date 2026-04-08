@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/keyboard';
 import { initRatings } from './starsrendering';
 import { getFeedbacksList } from './baseUrl';
 
@@ -25,15 +26,12 @@ export async function initFeedbacksSwiper() {
   initRatings(ratingsBloc);
   const swiper = new Swiper('.slider-reviews-cont', {
     pagination: {
-      el: '.swiper-pagination',
+      el: '.slider-reviews-cont .swiper-pagination',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 7,
     },
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
+    keyboard: true,
     navigation: {
       nextEl: '.slider__btn--next',
       prevEl: '.slider__btn--prev',

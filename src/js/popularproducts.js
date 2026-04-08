@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/keyboard';
 import { getPopularProducts } from './baseUrl';
 import { productmodalRender } from './productmodalrendering';
 
@@ -46,6 +47,7 @@ export async function initSwiper() {
     const id = btn.dataset.id;
     productmodalRender(id);
   });
+
   const swiper = new Swiper('.slider', {
     pagination: {
       el: '.slider .swiper-pagination',
@@ -57,6 +59,7 @@ export async function initSwiper() {
       nextEl: '.pagination-slider__btn--next',
       prevEl: '.pagination-slider__btn--prev',
     },
+    keyboard: true,
 
     on: {
       init() {
@@ -72,14 +75,6 @@ export async function initSwiper() {
       768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 24 },
       1440: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 24 },
     },
-  });
-  const container = document.querySelector('.slider');
-
-  container.setAttribute('tabindex', '0');
-
-  container.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') swiper.slideNext();
-    if (e.key === 'ArrowLeft') swiper.slidePrev();
   });
 }
 
