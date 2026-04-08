@@ -33,17 +33,17 @@
   line-height: 1.2;
   letter-spacing: 0.01em;
   color: #fff;
+  margin-bottom: 24px;
 }
 .hero-h2 {
   max-width: 335px;
   height: 145px;
-  margin-top: 24px;
-  margin-bottom: 32px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
   color: #fff;
+  margin-bottom: 32px;
 }
 
 @media screen and (min-width: 768px) {
@@ -61,7 +61,6 @@
   .hero-h2 {
     max-width: 560px;
     height: 87px;
-    margin-bottom: 32px;
   }
   .button-link-about {
     width: 209px;
@@ -94,7 +93,6 @@
   .hero-h2 {
     max-width: 560px;
     height: 87px;
-    margin-bottom: 32px;
   }
 }
 @media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
