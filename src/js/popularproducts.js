@@ -100,9 +100,9 @@ function a(slidesData) {
     <img
       class="slider__image"
       src="${nameItem}"
-      alt="${slide.name}"/>
+      alt="${slide.name.replace(/"/g, '').trim()}"/>
   </div>
-  <h3 class="furnitures-item__title">${slide.name}</h3>
+  <h3 class="furnitures-item__title">${slide.name.replace(/"/g, '').trim()}</h3>
 
   <ul class="furnitures-item__color-list">
     ${colors
