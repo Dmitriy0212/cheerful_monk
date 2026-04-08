@@ -3,6 +3,7 @@ const burgerBtn = document.querySelector('.header-burger-btn');
 const closeBtn = document.querySelector('.header-close-btn');
 const headerCloseMobile = document.querySelector('.header-list-row');
 const headerShadov = document.querySelector('.header-shadov');
+const headerScrolOn = document.querySelector('.burger-list-column');
 
 const toggleMenu = () => {
   if (document.body.style.overflow !== 'hidden') {
@@ -83,6 +84,11 @@ burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 headerShadov.addEventListener('click', toggleMenuFromShadov);
 for (const item of headerCloseMobile.children) {
+  const link = item.querySelector('a');
+  if (link) link.addEventListener('click', toggleMenu);
+}
+
+for (const item of headerScrolOn.children) {
   const link = item.querySelector('a');
   if (link) link.addEventListener('click', toggleMenu);
 }
