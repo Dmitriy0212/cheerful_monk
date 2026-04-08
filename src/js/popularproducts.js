@@ -100,9 +100,7 @@ function a(slidesData) {
     <img
       class="slider__image"
       src="${nameItem}"
-      alt="${slide.name}"
-      loading="lazy"
-    />
+      alt="${slide.name}"/>
   </div>
   <h3 class="furnitures-item__title">${slide.name}</h3>
 

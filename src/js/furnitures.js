@@ -17,7 +17,7 @@ function renderFurniture(furniture) {
     <li class="furnitures-item" data-id="${furniture._id}">
       <img class="furnitures-item__img" src="${
         furniture.images[0] ?? ''
-      }" alt="${furniture.name}" loading="lazy">
+      }" alt="${furniture.name}">
       <h3 class="furnitures-item__title">${furniture.name}</h3>
       <div class="furnitures-item__color-list" role="radiogroup" aria-label="Колір">${colorListLi}</div>
       <p class="furnitures-item__price">${furniture.price} грн</p>
