@@ -1,5 +1,6 @@
 import { postCreateUsersOrder } from './baseUrl';
-
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 const orderModal = document.getElementById('orderModal');
 const openOrderBtn = document.getElementById('openOrderModal');
 const closeBtn = document.querySelector('.order-close');
@@ -52,13 +53,23 @@ if (orderForm) {
     };
 
     try {
+      debugger;
       const result = await postCreateUsersOrder(orderData);
+
       this.reset();
       closeModal();
 
-      setTimeout(() => alert('Заявка успішно відправлена!'), 100);
+      iziToast.success({
+        title: 'Успіх',
+        message: `Ви замовили:${result.model}. Номер замовлення:${result.orderNum} `,
+        position: 'topRight',
+      });
     } catch (error) {
-      alert('Помилка відправки. Перевірте дані.');
+      iziToast.error({
+        title: 'Помилка',
+        message: 'Помилка відправки. Перевірте дані.',
+        position: 'topRight',
+      });
     }
     document.body.style.overflow = '';
   });
