@@ -80,7 +80,8 @@
 }
 .header-button-buy {
   display: flex;
-  width: 335px;
+  min-width: 295px;
+  max-width: 335px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -115,11 +116,6 @@
   transform: translateY(0);
   transition: all 0.25s ease;
 }
-@media only screen and (max-width: 375px) {
-  .header-button-buy {
-    max-width: fit-content;
-  }
-}
 
 @media only screen and (min-width: 768px) {
   .nav-bar-mob {
@@ -134,7 +130,7 @@
     height: fit-content;
   }
   .header-button-buy {
-    width: 185px;
+    min-width: 185px;
   }
   .header-list-row {
     align-items: flex-end;
@@ -145,6 +141,9 @@
   .nav-bar-mob {
     width: 298px;
     padding: 102px 98px 24px 25px;
+  }
+  .header-button-buy {
+    min-width: 175px;
   }
 }
 
