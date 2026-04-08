@@ -1,4 +1,34 @@
 <section class="hero">
+  <picture class="hero__bg">
+    <source
+      media="(min-width: 1440px)"
+      srcset="
+        /img/hero-section/hero-bg-desk.webp    1x,
+        /img/hero-section/hero-bg-desk@2x.webp 2x
+      "
+    />
+    <source
+      media="(min-width: 768px)"
+      srcset="
+        /img/hero-section/hero-bg-tab.webp    1x,
+        /img/hero-section/hero-bg-tab@2x.webp 2x
+      "
+    />
+
+    <source
+      media="(max-width: 767px)"
+      srcset="
+        /img/hero-section/hero-bg-mob.webp    1x,
+        /img/hero-section/hero-bg-mob@2x.webp 2x
+      "
+    />
+    <img
+      src="./img/hero-section/hero-bg-mob.webp"
+      alt="Створіть свій ідеальний дім"
+      class="hero__bg"
+      fetchpriority="high"
+    />
+  </picture>
   <div class="container">
     <div class="hero-content">
       <h1 class="hero-title">Створіть свій ідеальний дім</h1>
