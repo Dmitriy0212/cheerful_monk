@@ -102,9 +102,10 @@ export async function productmodalRender(id) {
 
   let colorsLegend = document.createElement('p');
   colorsLegend.textContent = 'Колір';
+  colorsLegend.classList.add('color');
   colorsUlcontainer.appendChild(colorsLegend);
 
-  slidesData.color.forEach(color => {
+  slidesData.color.forEach((color,index) => {
     let colorLabel = document.createElement('label');
     colorLabel.classList.add('color-option');
     colorsUlcontainer.appendChild(colorLabel);
@@ -114,6 +115,11 @@ export async function productmodalRender(id) {
     colorInput.name = 'color';
     colorInput.value = color;
     colorInput.ariaLabel = `Колір ${color}`;
+
+    if (index === 0) {
+      colorInput.checked = true;
+    }
+
     colorLabel.appendChild(colorInput);
 
     let colorSpan = document.createElement('span');
@@ -149,15 +155,6 @@ export async function productmodalRender(id) {
       'input[name="color"]:checked'
     )?.value;
 
-    if (!selectedColor) {
-      iziToast.error({
-        title: 'Помилка',
-        message: 'Виберіть будь ласка колір для продовження замовлення',
-        position: 'topRight',
-      });
-      return;
-    }
-
     const productData = {
       id: slidesData.category._id,
       color: selectedColor,
@@ -168,7 +165,7 @@ export async function productmodalRender(id) {
     targetProductmodal.parentElement.classList.remove('visibility-modal');
     orderModalMenu.classList.add('visibility-modal');
     iziToast.success({
-      title: 'Успех',
+      title: 'Успіх',
       message: 'Дані товару успішно обрані',
       position: 'topRight',
     });
