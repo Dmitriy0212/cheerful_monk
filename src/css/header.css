@@ -111,7 +111,7 @@
   transition: all 0.25s ease;
 }
 .is-open {
-  visibility: visible;
+  visibility: visible !important;
   pointer-events: auto;
   transform: translateY(0);
   transition: all 0.25s ease;

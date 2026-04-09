@@ -31,6 +31,7 @@ const toggleMenu = () => {
 };
 
 const toggleMenuFromShadov = async e => {
+  debugger;
   document.body.style.overflow = '';
   e.preventDefault();
   headerShadov.classList.toggle('is-open');
@@ -96,10 +97,26 @@ closeBtn.addEventListener('click', toggleMenu);
 headerShadov.addEventListener('click', toggleMenuFromShadov);
 for (const item of headerCloseMobile.children) {
   const link = item.querySelector('a');
-  if (link) link.addEventListener('click', toggleMenu);
+  if (link)
+    link.addEventListener('click', e => {
+      for (let i = 0; i < document.querySelectorAll('.is-open').length; ) {
+        document.querySelectorAll('.is-open')[i].classList.remove('is-open');
+      }
+      burgerBtn.classList.remove('hidann-button');
+      closeBtn.classList.add('hidann-button');
+      document.body.style.overflow = '';
+    });
 }
 
 for (const item of headerScrolOn.children) {
   const link = item.querySelector('a');
-  if (link) link.addEventListener('click', toggleMenu);
+  if (link)
+    link.addEventListener('click', e => {
+      for (let i = 0; i < document.querySelectorAll('.is-open').length; ) {
+        document.querySelectorAll('.is-open')[i].classList.remove('is-open');
+      }
+      burgerBtn.classList.remove('hidann-button');
+      closeBtn.classList.add('hidann-button');
+      document.body.style.overflow = '';
+    });
 }
