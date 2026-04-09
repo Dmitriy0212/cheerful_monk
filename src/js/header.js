@@ -109,6 +109,7 @@ for (const item of headerCloseMobile.children) {
 }
 
 for (const item of headerScrolOn.children) {
+  debugger;
   const link = item.querySelector('a');
   if (link)
     link.addEventListener('click', e => {
