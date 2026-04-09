@@ -7,12 +7,6 @@ export async function productmodalRender(id) {
   let slidesData = [];
   try {
     slidesData = await getFurnitureItemById(id);
-
-    iziToast.success({
-      title: 'Успіх',
-      message: 'Дані товару успішно завантажені',
-      position: 'topRight',
-    });
   } catch (error) {
     console.log('Помилка запиту товару:', error);
 
@@ -102,6 +96,7 @@ export async function productmodalRender(id) {
 
   let colorsLegend = document.createElement('p');
   colorsLegend.textContent = 'Колір';
+  colorsLegend.classList.add('color-title');
   colorsUlcontainer.appendChild(colorsLegend);
 
   slidesData.color.forEach(color => {

@@ -7,8 +7,10 @@
   color: #fff;
   border-radius: 100px;
   background: #6b0609;
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
   transition: all 0.25s ease;
@@ -23,8 +25,10 @@
   color: #080c09;
   border-radius: 100px;
   background: rgba(8, 12, 9, 0.05);
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
   transition: all 0.25s ease;
@@ -90,8 +94,8 @@
 
 .color-option__circle {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 100%;
   box-sizing: border-box;
   border: 0.05px solid rgba(131, 133, 132, 0.1);
