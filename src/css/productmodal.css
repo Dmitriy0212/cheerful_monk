@@ -29,14 +29,10 @@
 }
 
 .close-btn {
+  padding: 0;
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -113,6 +109,10 @@
   margin: 24px 0;
 }
 
+.color-title {
+  margin-bottom: 8px;
+}
+
 .colors {
   margin-bottom: 24px;
   font-weight: 400;
@@ -165,6 +165,7 @@
   }
 
   .main-image {
+    min-width: 580px;
     height: 308px;
   }
 
