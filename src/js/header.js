@@ -81,6 +81,17 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
   });
 });
 
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    debugger;
+    for (let i = 0; i < document.querySelectorAll('.is-open').length; ) {
+      document.querySelectorAll('.is-open')[i].classList.remove('is-open');
+    }
+    burgerBtn.classList.remove('hidann-button');
+    closeBtn.classList.add('hidann-button');
+    document.body.style.overflow = '';
+  }
+});
 burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 headerShadov.addEventListener('click', toggleMenuFromShadov);
