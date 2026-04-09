@@ -80,6 +80,12 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
     }
   });
 });
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    toggleMenu();
+  }
+});
 burgerBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
 headerShadov.addEventListener('click', toggleMenuFromShadov);
