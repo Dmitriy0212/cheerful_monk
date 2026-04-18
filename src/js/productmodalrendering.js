@@ -154,9 +154,10 @@ export async function productmodalRender(id) {
     }
 
     const productData = {
-      id: slidesData.category._id,
+      id: slidesData._id,
       color: selectedColor,
     };
+    debugger;
 
     localStorage.setItem('selectedProduct', JSON.stringify(productData));
 
